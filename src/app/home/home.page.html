@@ -1,14 +1,29 @@
 <ion-header>
-  <ion-toolbar>
+<ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+        Login Page
     </ion-title>
-  </ion-toolbar>
-</ion-header>
+</ion-toolbar>
 
+</ion-header>
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+        <form #f="ngForm" novalidate>
+                <ion-item>
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-input type="text" name="email" [(ngModel)]="user.email"  required #email="ngModel"> </ion-input>
+                </ion-item>
+                <ion-item>
+                        <ion-label position="floating">Password</ion-label>
+                        <ion-input type="password" name="password" [(ngModel)]="user.password" required #past="ngModel"> </ion-input>
+                </ion-item>
+                <ion-button color="primary" (click)="myval()">Login</ion-button>
+
+                <ion-label *ngIf="value" color="danger">Enter Your Correct Email and Password</ion-label>
+              </form>
+
+              <!-- <p>Form value: {{ f.value | json }}</p>
+<p>Form valid: {{ f.valid }}</p> -->
+
 </ion-content>
+
+

@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Profile</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button defaultHref="dashboard/first"></ion-back-button>
+          </ion-buttons> 
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>View</ion-card-subtitle>
+          <ion-card-title>UserName && Email</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <ion-item>
+                <ion-label >UserName:</ion-label>
+                <ion-input type="text" name="email" placeholder={{username}} value={{username}}   [(ngModel)]=" myuser.userName"> </ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>EmailId:</ion-label>
+                <ion-input type="text" name="email"  value={{myemail}} disabled=true> </ion-input>
+            </ion-item>
+            <ion-button color="primary" (click)="changeUserName()" >Change</ion-button>
+            <ion-label *ngIf="value" color="danger">UserName Not Updated </ion-label>
+            </ion-card-content>
+      </ion-card>
+      <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Settings</ion-card-subtitle>
+            <ion-card-title>Change Your Password</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+              <ion-item>
+                  <ion-label>Old Password:</ion-label>
+                  <ion-input type={{type}} name="old_password" [(ngModel)]="password.old_password"> </ion-input>
+                  <ion-icon name="eye" item-right (click)="showHide()"></ion-icon>
+              </ion-item>
+              <ion-item>
+                  <ion-label >NewPassword:</ion-label>
+                  <ion-input type={{type}} name="new_password" [(ngModel)]="password.new_password"> </ion-input>
+                  <ion-icon name="eye" item-right (click)="showHide()"></ion-icon>
+              </ion-item>
+
+              <ion-button color="primary" (click)="changePassword()" >Change</ion-button>
+              <ion-label *ngIf="value" color="danger">Type your old Password Correctly</ion-label>
+              </ion-card-content>
+        </ion-card>
+
+</ion-content>

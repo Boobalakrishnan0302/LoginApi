@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api:"http://192.168.1.65/Login/demo/index.php/welcome"
 };
 
 /*
@@ -14,3 +15,15 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+
+// <!-- The core Firebase JS SDK is always required and must be listed first -->
+// <script src="/__/firebase/7.2.1/firebase-app.js"></script>
+
+// <!-- TODO: Add SDKs for Firebase products that you want to use
+//      https://firebase.google.com/docs/web/setup#available-libraries -->
+// <script src="/__/firebase/7.2.1/firebase-analytics.js"></script>
+
+// <!-- Initialize Firebase -->
+// <script src="/__/firebase/init.js"></script>
