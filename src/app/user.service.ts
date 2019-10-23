@@ -27,5 +27,10 @@ export class UserService {
     return this.http.post(`${environment.api}/email`,data);
   }
 
+  public pusyyh(data){
+    return this.http.post(`${environment.api}/sendfcm`,data);
+  }
+
+
  
 }

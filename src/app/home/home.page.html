@@ -16,11 +16,17 @@
                         <ion-label position="floating">Password</ion-label>
                         <ion-input type="password" name="password" [(ngModel)]="user.password" required #past="ngModel"> </ion-input>
                 </ion-item>
-                <ion-button color="primary" (click)="myval()">Login</ion-button>
+                <ion-button color="primary" size="large" expand="block" (click)="myval()">Login</ion-button>
                 <P><a routerLink="/forgotpass">Forgot password</a></P>
 
                 <ion-label *ngIf="value" color="danger">Enter Your Correct Email and Password</ion-label>
               </form>
+
+              <ion-button color="primary" (click)="callMyNotify()">Notification</ion-button>
+              <p >
+                  {{price}}
+              
+              </p>
 
               <!-- <p>Form value: {{ f.value | json }}</p>
 <p>Form valid: {{ f.valid }}</p> -->
