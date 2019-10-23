@@ -22,4 +22,10 @@ export class UserService {
   userChange(data){
     return this.http.post(`${environment.api}/update_username`,data);
   }
+
+  public forgot(data){
+    return this.http.post(`${environment.api}/email`,data);
+  }
+
+ 
 }

@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
   { path: 'userprofile', loadChildren: './pages/userprofile/userprofile.module#UserprofilePageModule' },
   { path: 'logout', loadChildren: './pages/logout/logout.module#LogoutPageModule' },
+  { path: 'forgotpass', loadChildren: './forgotpass/forgotpass.module#ForgotpassPageModule' },
 ];
 
 @NgModule({

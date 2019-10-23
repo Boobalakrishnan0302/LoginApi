@@ -17,6 +17,7 @@
                         <ion-input type="password" name="password" [(ngModel)]="user.password" required #past="ngModel"> </ion-input>
                 </ion-item>
                 <ion-button color="primary" (click)="myval()">Login</ion-button>
+                <P><a routerLink="/forgotpass">Forgot password</a></P>
 
                 <ion-label *ngIf="value" color="danger">Enter Your Correct Email and Password</ion-label>
               </form>
