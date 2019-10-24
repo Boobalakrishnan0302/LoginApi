@@ -2,7 +2,7 @@
     <ion-menu contentId="content" >
   
       <ion-header>
-        <ion-toolbar color="primary">                 
+        <ion-toolbar color="dark">                 
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
@@ -12,6 +12,7 @@
           <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
             <ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)"> 
               <ion-label>
+                  <ion-icon slot="start" [name]="p.icon" color="dark"></ion-icon>
                 {{p.title}}
               </ion-label>
             </ion-item>

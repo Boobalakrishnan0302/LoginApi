@@ -1,5 +1,5 @@
 <ion-header>
-<ion-toolbar color="primary">
+<ion-toolbar color="medium">
     <ion-title>
         Login Page
     </ion-title>
@@ -9,20 +9,25 @@
 <ion-content>
         <form #f="ngForm" novalidate>
                 <ion-item>
-                    <ion-label position="floating">Email</ion-label>
+                    <ion-label position="floating">    <ion-icon name="mail" item-start></ion-icon>Email</ion-label>
                     <ion-input type="text" name="email" [(ngModel)]="user.email"  required #email="ngModel"> </ion-input>
                 </ion-item>
                 <ion-item>
-                        <ion-label position="floating">Password</ion-label>
+                        <ion-label position="floating"><ion-icon name="lock" item-start></ion-icon>Password</ion-label>
                         <ion-input type="password" name="password" [(ngModel)]="user.password" required #past="ngModel"> </ion-input>
                 </ion-item>
-                <ion-button color="primary" size="large" expand="block" (click)="myval()">Login</ion-button>
-                <P><a routerLink="/forgotpass">Forgot password</a></P>
+                <p text-right tappable routerLink="/forgotpass" class="paz">
+                        <ion-text color="medium">
+                          <strong>Forgot Pass?</strong>
+                        </ion-text>
+                      </p>
+                <ion-button color="dark" icon-left size="medium" expand="full" shape="round" (click)="myval()">  <ion-icon name="log-in"></ion-icon>Login</ion-button>
+                <!-- <P><a routerLink="/forgotpass">Forgot password</a></P> -->
 
                 <ion-label *ngIf="value" color="danger">Enter Your Correct Email and Password</ion-label>
               </form>
 
-              <ion-button color="primary" (click)="callMyNotify()">Notification</ion-button>
+              <!-- <ion-button color="primary" (click)="callMyNotify()">Notification</ion-button> -->
               <p >
                   {{price}}
               

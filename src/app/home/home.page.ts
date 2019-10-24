@@ -4,6 +4,7 @@ import{UserService} from '../user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FCM } from '@ionic-native/fcm/ngx';
 import { Platform } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 import { AlertController } from '@ionic/angular';
 
@@ -24,6 +25,8 @@ export class HomePage implements OnInit{
   value=false;
   pushes: any = [];
   mytoken:any = {};
+  a=0;
+  b=0;
 
   price:string = '';
 
@@ -32,7 +35,7 @@ export class HomePage implements OnInit{
 
 
   constructor(private userser:UserService,private route:Router,public fcm: FCM, public plt: Platform, public alet:AlertController, 
-              public activeRoute : ActivatedRoute ) {
+              public activeRoute : ActivatedRoute,public navCtrl: NavController ) {
 
     this.plt.ready()
     .then(()=>{
@@ -40,6 +43,11 @@ export class HomePage implements OnInit{
 
       
       this.fcm.onNotification().subscribe(data =>{
+        this.a++;
+        if(this.a >5){
+          this.a=1;
+        }
+        localStorage.setItem(`${this.a}`,JSON.stringify(data.price));
 
         console.log("received notifivcation",data);
     
@@ -49,7 +57,11 @@ export class HomePage implements OnInit{
           this.price = JSON.stringify(data.price);
           
           console.log("myprice",this.price)
+          if(this.b>0){
+            this.navCtrl.navigateForward(['notification']);
 
+          }
+       
 
           console.log("Received in background");
         }
@@ -59,6 +71,10 @@ export class HomePage implements OnInit{
           
           console.log("myprice",this.price)
           this.presentAlert()
+          if(this.b>0){
+            this.navCtrl.navigateForward(['notification']);
+
+          }
         
           console.log("Received in foreground");
         }
@@ -86,11 +102,13 @@ ngOnInit(){
     
 }
 myval(){
+  
 console.log(this.user);
 
   this.userser.login(this.user).subscribe(
     ( res : any) => {
       if(res.status== 200){
+        this.b++;
         localStorage.setItem('myDataKey',(this.user.email));
         localStorage.setItem('userName',(res.username));
         console.log(localStorage.getItem('myDataKey'));
@@ -124,7 +142,7 @@ callMyNotify(){
     async presentAlert() {
     const alert = await this.alet.create({
       header: 'Alert',
-      subHeader: 'Subtitle',
+      subHeader: 'Notofication Received',
       message: this.price,
       buttons: ['OK']
     });

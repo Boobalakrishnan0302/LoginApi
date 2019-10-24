@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'userprofile', loadChildren: './pages/userprofile/userprofile.module#UserprofilePageModule' },
   { path: 'logout', loadChildren: './pages/logout/logout.module#LogoutPageModule' },
   { path: 'forgotpass', loadChildren: './forgotpass/forgotpass.module#ForgotpassPageModule' },
+  { path: 'notification', loadChildren: './notification/notification.module#NotificationPageModule' },
 ];
 
 @NgModule({

@@ -19,7 +19,12 @@ const routes: Routes = [
       {
         path:'second',
         loadChildren:'../logout/logout.module#LogoutPageModule'
-      },]
+      },
+      {
+        path:'third',
+        loadChildren:'../../notification/notification.module#NotificationPageModule'
+      },
+    ]
   }
 ];
 

@@ -11,12 +11,20 @@ export class DashboardPage implements OnInit {
   selectedPath=''
   pages=[
     {
-      title:'Dashboard',
-      url:'/dashboard/first'
+      title:'Home',
+      url:'/dashboard/first',
+      icon:'home'
     },{
       title:'MyProfile',
-      url:'/dashboard/second'
-    }
+      url:'/dashboard/second',
+      icon: 'information-circle-outline'
+    },
+    {
+      title:'Notifications',
+      url:'/dashboard/third',
+      icon: 'notifications'
+    },
+
   ]
   value1="fasle";
 
